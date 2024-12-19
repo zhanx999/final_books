@@ -32,7 +32,7 @@ public class BookService {
     public Optional<Book> updateBook(Long id, Book bookDetails) {
         return bookRepository.findById(id).map(book -> {
             book.setName(bookDetails.getName());
-            book.setEmail(bookDetails.getEmail());
+            book.setAuthor(bookDetails.getAuthor());
             return bookRepository.save(book);
         });
     }
